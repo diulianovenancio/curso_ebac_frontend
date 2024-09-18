@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Validação de Números</h1>
+    <form id="meuFormulario">
+        <label for="campoA">Campo A:</label>
+        <input type="number" id="campoA" name="campoA" required>
+
+        <label for="campoB">Campo B:</label>
+        <input type="number" id="campoB" name="campoB" required>
+
+        <button type="submit">Verificar</button>
+    </form>
+
+    <div id="mensagem"></div>
+
+    <script>
+        const formulario = document.getElementById('meuFormulario');
+        const mensagemDiv = document.getElementById('mensagem');
+
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+
+            const campoA = parseFloat(document.getElementById('campoA').value);
+            const campoB = parseFloat(document.getElementById('campoB').value);
+
+            if (campoB > campoA) {
+                mensagemDiv.textContent = 'Formulário válido! B é maior que A.';
+                mensagemDiv.style.color = 'green';
+            } else {
+                mensagemDiv.textContent = 'Formulário inválido! B deve ser maior que A.';
+                mensagemDiv.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
