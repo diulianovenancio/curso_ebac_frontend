@@ -14,29 +14,32 @@ $('#cpf').mask('000.000.000-00', {
 })
 
 $('#cep').mask('00000-000', {
-    placeholder: '012345-678'
+    placeholder: '12345-678'
 })
 
 $('form').validate({
     rules: {
         nome: {
-            requerido: true
+            required: true
         },
         email: {
-            requerido: true,
+            required: true,
             email: true
         },
         telefone: {
-            requerido: true
+            required: true
         },
         endereco: {
-            requerido: true
+            required: true
         },
         cep: {
-            requerido: true
+            required: true
         },
         cpf: {
-            requerido: true
+            required: true
+        },
+        numero: {
+            required: true
         },
     },
     submitHandler: function (form) {
@@ -47,3 +50,25 @@ $('form').validate({
         alert("Por favor, preencha os campos para prosseguir com a compra!");
     }
 })
+
+
+$("#cep").blur(function(){
+    var cep = this.value.replace(/[^0-9]/, "");
+    if(cep.length != 8){
+        return false;
+    }
+    var url = "https://viacep.com.br/ws/" + cep + "/json/";
+    $.getJSON(url, function(dadosRetorno) {
+        try {
+            var logradouro = dadosRetorno.logradouro || '';
+            var bairro = dadosRetorno.bairro || '';
+            var cidade = dadosRetorno.localidade || '';
+            var uf = dadosRetorno.uf || '';    
+            var enderecoCompleto = `${logradouro}, ${bairro} - ${cidade}/${uf}`;
+
+            $("#enderecoCompleto").val(enderecoCompleto);
+            
+        } catch (ex) {}
+    });
+
+});
