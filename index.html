@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício boas práticas de CSS</title>
+    <link rel="stylesheet" href="bem/main.css">
+    <!-- O método BEM, é mais um estilo de organização para regras CSS, como o SMACSS.
+    O BEM é a sigla para "Block Element Modifier", e cada um dos elementos do nome também é um bloco de
+    divisão desta organização. Block são os "containers", os tipos de tags de layout que armazenam o conteúdo.
+    Element como já se entende, são os conteúdos, itens e midias inseridos no projeto. E o modifier são as personalizações
+    realizadas em todos os casos dos outros dois elementos. Então tudo no CSS nesta regra será organizada dentro destes 3
+    organizadores-->
+</head>
+<body>
+    <div class="produtos">
+        <div class="produto">
+            <img class="produto-imagem" src="https://via.placeholder.com/100x100">
+            <h4 class="produto-nome">Nome do produto</h4>
+            <p class="produto-descricao">
+                Descrição do produto
+            </p>
+        </div>
+        <div class="produto em-destaque">
+            <img class="produto-imagem" src="https://via.placeholder.com/100x100">
+            <h4 class="produto-nome">Nome do produto</h4>
+            <p class="produto-descricao">
+                Descrição do produto
+            </p>
+        </div>
+        <div class="produto">
+            <img class="produto-imagem" src="https://via.placeholder.com/100x100">
+            <h4 class="produto-nome">Nome do produto</h4>
+            <p class="produto-descricao">
+                Descrição do produto
+            </p>
+        </div>
+    </div>
+</body>
+</html>
