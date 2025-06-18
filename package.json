@@ -1,0 +1,24 @@
+{
+  "name": "curso_ebac_frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diulianovenancio/curso_ebac_frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diulianovenancio/curso_ebac_frontend/issues"
+  },
+  "homepage": "https://github.com/diulianovenancio/curso_ebac_frontend#readme",
+  "devDependencies": {
+    "gulp": "^5.0.0"
+  }
+}
